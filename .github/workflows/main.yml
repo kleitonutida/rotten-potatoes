@@ -49,6 +49,7 @@ jobs:
 
   CD:
     runs-on: ubuntu-latest
+    needs: [CI]
     steps:
       - uses: actions/checkout@v2
       
@@ -58,3 +59,11 @@ jobs:
           method: kubeconfig
           kubeconfig: ${{ secrets.K8S_DIGITAL_OCEAN_CONFIG }}
       
+      - name: Deploy Mongo
+        uses: Azure/k8s-deploy@v1
+        with:
+          # Path to the manifest files which will be used for deployment.
+          manifests: |
+            k8s/mongodb/deployment.yaml
+            k8s/mongodb/service.yaml
+            
