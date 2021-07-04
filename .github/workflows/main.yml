@@ -72,5 +72,5 @@ jobs:
         with:
           # Path to the manifest files which will be used for deployment.
           manifests: |
-            k8s/mongodb/deployment.yaml
+            k8s/web/deployment.yaml
           images: kleitonutida/rotten-potatoes:${{ github.run_number }}
