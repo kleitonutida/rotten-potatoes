@@ -3,12 +3,16 @@ kind: Deployment
 metadata:
   name: movies
 spec:
-  replicas: 10
+  replicas: 3
   selector:
     matchLabels:
       app: movies
   template:
     metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: /metrics
+        prometheus.io/port: "5000"
       labels:
         app: movies
     spec:
@@ -42,4 +46,4 @@ spec:
   - port: 80
     targetPort: 5000
     nodePort: 30000
-  type: LoadBalancer
+  type: NodePort
