@@ -18,4 +18,5 @@ Onde:
 
 ## Grafana
 
-Senha Admin: rp9ESweqS8kbOXOHb8omk904fQIBDjUMRsO80RyQ
+Usuário: admin
+Senha: rp9ESweqS8kbOXOHb8omk904fQIBDjUMRsO80RyQ
